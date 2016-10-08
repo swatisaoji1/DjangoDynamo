@@ -1,0 +1,37 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<h1>Students List</h1>
+<table class="table table-condensed table-striped">
+    <thead>
+    <tr>
+        <td>Title</td>
+        <td>Time</td>
+        <td>Notes</td>
+        <td>Title</td>
+        <td>Time</td>
+        <td>Notes</td>
+    </tr>
+    </thead>
+    <tbody>
+        {% for everi_item in data %}
+        <tr>
+            <td>{{everi_item.student_id}}</td>
+            <td>{{everi_item.email}}</td>
+            <td>{{everi_item.first_name}}</td>
+            <td>{{everi_item.last_name}}</td>
+            <td>{{everi_item.address}}</td>
+            <td>{{everi_item.gpa}}</td>
+            <td>
+                <a class="btn btn-default"  href="/edit/{{everi_item.student_id}}">
+                      Edit
+                </a>
+                <a class="btn btn-danger"  href="/delete/{{everi_item.student_id}}">
+                      Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock content %}

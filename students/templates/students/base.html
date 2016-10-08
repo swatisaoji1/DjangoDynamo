@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swatis Site</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+ <div class="page-header">
+     <div class="container-fluid" >
+         <ul class="nav nav-pills justified">
+            <li role="presentation" class="active"><a href="{% url 'home' %}">Students</a></li>
+            <li role="presentation"><a href="{% url 'new_student' %}"><span class="glyphicon glyphicon-plus"></span>New Student</a></li>
+
+        </ul>
+     </div>
+
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
